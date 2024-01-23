@@ -6,7 +6,7 @@ export const TextContext = createContext<{
 } | null>(null);
 
 const TextProvider: React.FC<{
-  children: React.ReactNode[];
+  children: React.ReactNode[] | React.ReactNode;
 }> = (props) => {
   const [text, setText] = useState("");
 
