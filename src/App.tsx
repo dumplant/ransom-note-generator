@@ -1,15 +1,21 @@
-
-import './App.css'
+import ShowArea from "./components/editor/showArea";
+import InputArea from "./components/editor/inputArea";
+import TextProvider from "./contexts/textContext";
 
 function App() {
-
   return (
-    <div className='flex'>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
+    <div className="h-full flex gap-4 p-4">
+      <TextProvider>
+        <div className="flex-1">
+          <InputArea />
+        </div>
+        <div className="flex-1">
+          <ShowArea />
+        </div>
+        <div className="flex-1">1</div>
+      </TextProvider>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
