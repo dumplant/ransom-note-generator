@@ -8,6 +8,7 @@ const InputArea = () => {
 
   return (
     <Textarea
+      className="h-full"
       onChange={(e) => {
         setText(e.target.value);
       }}

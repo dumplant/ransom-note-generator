@@ -77,4 +77,7 @@
   body {
     @apply min-h-screen;
   }
+  #root {
+    @apply min-h-screen;
+  }
 }
