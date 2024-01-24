@@ -18,6 +18,7 @@ const ShowArea = () => {
               style.padding.value,
               style.padding.randomness
             ),
+            margin: getRandomValue(style.margin.value, style.margin.randomness),
           }}
           className={`inline-block bg-stone-200`}
         >

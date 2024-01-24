@@ -5,6 +5,10 @@ export interface Style {
     value: number;
     randomness: number;
   };
+  margin: {
+    value: number;
+    randomness: number;
+  };
 }
 
 export const StyleContext = createContext<{
@@ -17,6 +21,10 @@ const StyleProvider: React.FC<{
 }> = (props) => {
   const [style, setStyle] = useState<Style>({
     padding: {
+      value: 10,
+      randomness: 10,
+    },
+    margin: {
       value: 10,
       randomness: 10,
     },
