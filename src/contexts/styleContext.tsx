@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-interface Style {
+export interface Style {
   padding: {
     value: number;
     randomness: number;
