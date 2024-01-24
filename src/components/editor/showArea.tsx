@@ -9,22 +9,30 @@ const ShowArea = () => {
   const styleCtx = useContext(StyleContext);
   const { style } = styleCtx!;
   return (
-    <div className="h-full w-full rounded-md border border-input bg-background px-3 py-2">
+    <div className="h-full w-full   rounded-md border border-input bg-background px-3 py-2">
       {Array.from(text).map((char, index) => (
-        <span
+        <div
           key={index}
-          className={`bg-stone-200 ${
-            StyleConfig["padding"][
-              style?.padding.value! +
-                Math.floor(Math.random() * style?.padding.randomness!)
-            ]
-          }`}
+          style={{
+            padding: getRandomValue(
+              style.padding.value,
+              style.padding.randomness
+            ),
+          }}
+          className={`inline-block bg-stone-200`}
         >
           {char}
-        </span>
+        </div>
       ))}
     </div>
   );
 };
 
 export default ShowArea;
+
+function getRandomValue(value: number, randomness: number) {
+  let min = randomness * -1;
+  let max = randomness;
+
+  return value + Math.floor(Math.random() * (max - min + 1)) + min;
+}

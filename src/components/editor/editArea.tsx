@@ -10,8 +10,8 @@ const EditorArea = () => {
     <div>
       <div>内边距 padding: </div>
       <Slider
-        defaultValue={[2]}
-        max={4}
+        defaultValue={[10]}
+        max={20}
         step={1}
         onValueChange={(value) => {
           setStyle({
@@ -25,8 +25,8 @@ const EditorArea = () => {
       />
       <div>随机性 random: </div>
       <Slider
-        defaultValue={[2]}
-        max={4}
+        defaultValue={[10]}
+        max={20}
         step={1}
         onValueChange={(value) => {
           setStyle({

@@ -8,14 +8,19 @@ interface Style {
 }
 
 export const StyleContext = createContext<{
-  style: Style | null;
-  setStyle: (style: Style | null) => void;
+  style: Style;
+  setStyle: (style: Style) => void;
 } | null>(null);
 
 const StyleProvider: React.FC<{
   children: React.ReactNode | React.ReactNode;
 }> = (props) => {
-  const [style, setStyle] = useState<Style | null>(null);
+  const [style, setStyle] = useState<Style>({
+    padding: {
+      value: 10,
+      randomness: 10,
+    },
+  });
 
   return (
     <StyleContext.Provider value={{ style, setStyle }}>
