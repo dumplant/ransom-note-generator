@@ -10,33 +10,40 @@ const ShowArea = () => {
   const { style } = styleCtx!;
   return (
     <div className="h-full w-full   rounded-md border border-input bg-background px-3 py-2">
-      {Array.from(text).map((char, index) => (
-        <div
-          key={index}
-          style={{
-            background: getRandomBackground(style.background.color),
-            translate: getRandomTranslateValue(
-              style.translateX.value,
-              style.translateY.value,
-              style.translateX.randomness,
-              style.translateY.randomness
-            ),
-            rotate: getRandomValue(
-              style.rotate.value,
-              style.rotate.randomness,
-              "deg"
-            ) as string,
-            padding: getRandomValue(
-              style.padding.value,
-              style.padding.randomness
-            ),
-            margin: getRandomValue(style.margin.value, style.margin.randomness),
-          }}
-          className={`inline-block `}
-        >
-          {char}
-        </div>
-      ))}
+      {Array.from(text).map((char, index) => {
+        const { bgColor, color } = getRandomColor(style.background.color);
+        return (
+          <div
+            key={index}
+            style={{
+              background: bgColor,
+              color: color,
+              translate: getRandomTranslateValue(
+                style.translateX.value,
+                style.translateY.value,
+                style.translateX.randomness,
+                style.translateY.randomness
+              ),
+              rotate: getRandomValue(
+                style.rotate.value,
+                style.rotate.randomness,
+                "deg"
+              ) as string,
+              padding: getRandomValue(
+                style.padding.value,
+                style.padding.randomness
+              ),
+              margin: getRandomValue(
+                style.margin.value,
+                style.margin.randomness
+              ),
+            }}
+            className={`inline-block `}
+          >
+            {char}
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -69,7 +76,31 @@ function getRandomTranslateValue(
   return `${randomTranslateX}px ${randomTranslateY}px`;
 }
 
-function getRandomBackground(name: keyof typeof colorPalette) {
+function getRandomColor(name: keyof typeof colorPalette) {
   const palette = colorPalette[name];
-  return palette[Math.floor(Math.random() * palette.length)];
+  const bgColor = palette[Math.floor(Math.random() * palette.length)];
+  return {
+    bgColor: bgColor,
+    color: pickTextColorBasedOnBgColorAdvanced(bgColor, "#efefef", "#1e1e1e"),
+  };
+}
+
+function pickTextColorBasedOnBgColorAdvanced(
+  bgColor: string,
+  lightColor: string,
+  darkColor: string
+) {
+  var color = bgColor.charAt(0) === "#" ? bgColor.substring(1, 7) : bgColor;
+  var r = parseInt(color.substring(0, 2), 16); // hexToR
+  var g = parseInt(color.substring(2, 4), 16); // hexToG
+  var b = parseInt(color.substring(4, 6), 16); // hexToB
+  var uicolors = [r / 255, g / 255, b / 255];
+  var c = uicolors.map((col) => {
+    if (col <= 0.03928) {
+      return col / 12.92;
+    }
+    return Math.pow((col + 0.055) / 1.055, 2.4);
+  });
+  var L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  return L > 0.179 ? darkColor : lightColor;
 }
