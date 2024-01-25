@@ -9,6 +9,18 @@ export interface Style {
     value: number;
     randomness: number;
   };
+  rotate: {
+    value: number;
+    randomness: number;
+  };
+  translateX: {
+    value: number;
+    randomness: number;
+  };
+  translateY: {
+    value: number;
+    randomness: number;
+  };
 }
 
 export const StyleContext = createContext<{
@@ -25,6 +37,18 @@ const StyleProvider: React.FC<{
       randomness: 10,
     },
     margin: {
+      value: 10,
+      randomness: 10,
+    },
+    rotate: {
+      value: 10,
+      randomness: 10,
+    },
+    translateX: {
+      value: 10,
+      randomness: 10,
+    },
+    translateY: {
       value: 10,
       randomness: 10,
     },
