@@ -13,37 +13,41 @@ const SliderGroup = ({
   attr: string;
 }) => {
   return (
-    <div>
-      <div>{title}: </div>
-      <Slider
-        defaultValue={[10]}
-        max={20}
-        step={1}
-        onValueChange={(value) => {
-          setStyle({
-            ...style,
-            [attr]: {
-              ...style[attr as keyof Style]!,
-              value: value[0],
-            },
-          });
-        }}
-      />
-      <div>随机性 random: </div>
-      <Slider
-        defaultValue={[10]}
-        max={20}
-        step={1}
-        onValueChange={(value) => {
-          setStyle({
-            ...style,
-            [attr]: {
-              ...style[attr as keyof Style]!,
-              randomness: value[0],
-            },
-          });
-        }}
-      />
+    <div className="flex gap-4 mb-8">
+      <div className="flex-1">
+        <div className="mb-4">{title} </div>
+        <Slider
+          defaultValue={[10]}
+          max={20}
+          step={1}
+          onValueChange={(value) => {
+            setStyle({
+              ...style,
+              [attr]: {
+                ...style[attr as keyof Style]!,
+                value: value[0],
+              },
+            });
+          }}
+        />
+      </div>
+      <div className="flex-1">
+        <div className="mb-4">随机性 random </div>
+        <Slider
+          defaultValue={[10]}
+          max={20}
+          step={1}
+          onValueChange={(value) => {
+            setStyle({
+              ...style,
+              [attr]: {
+                ...style[attr as keyof Style]!,
+                randomness: value[0],
+              },
+            });
+          }}
+        />
+      </div>
     </div>
   );
 };
