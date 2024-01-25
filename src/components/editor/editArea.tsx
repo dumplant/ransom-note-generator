@@ -1,6 +1,7 @@
 import { StyleContext } from "@/contexts/styleContext";
 import { useContext } from "react";
 import SliderGroup from "./components/sliderGroup";
+import ColorSelect from "./components/colorSelect";
 
 const EditorArea = () => {
   const ctx = useContext(StyleContext);
@@ -37,6 +38,7 @@ const EditorArea = () => {
         setStyle={setStyle}
         attr="translateY"
       />
+      <ColorSelect />
     </>
   );
 };

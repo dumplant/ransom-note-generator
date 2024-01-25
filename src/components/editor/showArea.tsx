@@ -1,3 +1,4 @@
+import { colorPalette } from "@/config/StyleConfig";
 import { StyleContext } from "@/contexts/styleContext";
 import { TextContext } from "@/contexts/textContext";
 import { useContext } from "react";
@@ -13,6 +14,7 @@ const ShowArea = () => {
         <div
           key={index}
           style={{
+            background: getRandomBackground(style.background.color),
             translate: getRandomTranslateValue(
               style.translateX.value,
               style.translateY.value,
@@ -30,7 +32,7 @@ const ShowArea = () => {
             ),
             margin: getRandomValue(style.margin.value, style.margin.randomness),
           }}
-          className={`inline-block bg-stone-200`}
+          className={`inline-block `}
         >
           {char}
         </div>
@@ -65,4 +67,9 @@ function getRandomTranslateValue(
   let randomTranslateY =
     translateY + Math.floor(Math.random() * (maxY - minY + 1)) + minY;
   return `${randomTranslateX}px ${randomTranslateY}px`;
+}
+
+function getRandomBackground(name: keyof typeof colorPalette) {
+  const palette = colorPalette[name];
+  return palette[Math.floor(Math.random() * palette.length)];
 }

@@ -1,3 +1,4 @@
+import { colorPalette } from "@/config/StyleConfig";
 import React, { createContext, useState } from "react";
 
 export interface Style {
@@ -20,6 +21,9 @@ export interface Style {
   translateY: {
     value: number;
     randomness: number;
+  };
+  background: {
+    color: keyof typeof colorPalette;
   };
 }
 
@@ -51,6 +55,9 @@ const StyleProvider: React.FC<{
     translateY: {
       value: 10,
       randomness: 10,
+    },
+    background: {
+      color: "Wisdom",
     },
   });
 
