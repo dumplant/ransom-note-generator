@@ -8,6 +8,14 @@ const ShowArea = () => {
   const { text } = textCtx!;
   const styleCtx = useContext(StyleContext);
   const { style } = styleCtx!;
+  let filteredText = style.ignoreSpace ? text.replace(/\s*/g, "") : text;
+  if (filteredText.endsWith("/")) {
+    filteredText = filteredText.slice(0, -1);
+  }
+  const filteredTextArray = style.slashSeparator
+    ? filteredText.split("/")
+    : filteredText.split("");
+  console.log(filteredTextArray);
   return (
     <div
       className={
@@ -15,7 +23,10 @@ const ShowArea = () => {
       }
     >
       <LetterPaper>
-        {Array.from(text).map((char, index) => {
+        {filteredTextArray.map((char, index) => {
+          if (!char.length) {
+            return;
+          }
           const { bgColor, color } = getRandomColor(style.background.color);
           return (
             <>

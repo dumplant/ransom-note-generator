@@ -27,6 +27,8 @@ export interface Style {
   };
   fontFamily: { [key: string]: boolean };
   paper: string;
+  ignoreSpace: boolean;
+  slashSeparator: boolean;
 }
 
 export const StyleContext = createContext<{
@@ -71,6 +73,8 @@ const StyleProvider: React.FC<{
       FangSong: true,
     },
     paper: "white-paper",
+    ignoreSpace: true,
+    slashSeparator: false,
   });
 
   return (

@@ -4,12 +4,14 @@ import SliderGroup from "./components/sliderGroup";
 import ColorSelect from "./components/colorSelect";
 import FontSelect from "./components/fontSelect";
 import PaperSelect from "./components/paperSelect";
+import InputControl from "./components/inputControl";
 
 const EditorArea = () => {
   const ctx = useContext(StyleContext);
   const { style, setStyle } = ctx!;
   return (
     <>
+      <InputControl />
       <PaperSelect />
       <SliderGroup
         title="内边距 padding"
