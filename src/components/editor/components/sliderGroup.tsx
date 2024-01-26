@@ -24,7 +24,14 @@ const SliderGroup = ({
             setStyle({
               ...style,
               [attr]: {
-                ...style[attr as keyof Style]!,
+                ...style[
+                  attr as
+                    | "padding"
+                    | "margin"
+                    | "rotate"
+                    | "translateX"
+                    | "translateY"
+                ]!,
                 value: value[0],
               },
             });
@@ -41,7 +48,14 @@ const SliderGroup = ({
             setStyle({
               ...style,
               [attr]: {
-                ...style[attr as keyof Style]!,
+                ...style[
+                  attr as
+                    | "padding"
+                    | "margin"
+                    | "rotate"
+                    | "translateX"
+                    | "translateY"
+                ]!,
                 randomness: value[0],
               },
             });
