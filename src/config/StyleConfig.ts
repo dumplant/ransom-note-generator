@@ -8,3 +8,13 @@ export const colorPalette = {
   Together: ["#EAD8CA", "#CEABB0", "#4D6181", "#C6B74F", "#F46F21"],
   Projections: ["#FDA176", "#FD4A1F", "#FEE9B0", "#F4B04D", "#58B185"],
 };
+
+export const fontFamily = [
+  "SimSun",
+  "SimHei",
+  "Microsoft Yahei",
+  "Microsoft JhengHei",
+  "KaiTi",
+  "NSimSun",
+  "FangSong",
+];

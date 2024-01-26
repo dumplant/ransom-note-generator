@@ -16,6 +16,7 @@ const ShowArea = () => {
           <div
             key={index}
             style={{
+              fontFamily: getRandomFont(style.fontFamily),
               background: bgColor,
               color: color,
               translate: getRandomTranslateValue(
@@ -103,4 +104,9 @@ function pickTextColorBasedOnBgColorAdvanced(
   });
   var L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
   return L > 0.179 ? darkColor : lightColor;
+}
+
+function getRandomFont(fontFamily: { [key: string]: boolean }) {
+  const filteredFamily = Object.keys(fontFamily).filter((v) => fontFamily[v]);
+  return filteredFamily[Math.floor(Math.random() * filteredFamily.length)];
 }

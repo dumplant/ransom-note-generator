@@ -25,6 +25,7 @@ export interface Style {
   background: {
     color: keyof typeof colorPalette;
   };
+  fontFamily: { [key: string]: boolean };
 }
 
 export const StyleContext = createContext<{
@@ -58,6 +59,15 @@ const StyleProvider: React.FC<{
     },
     background: {
       color: "Wisdom",
+    },
+    fontFamily: {
+      SimSun: true,
+      SimHei: true,
+      "Microsoft Yahei": true,
+      "Microsoft JhengHei": true,
+      KaiTi: true,
+      NSimSun: true,
+      FangSong: true,
     },
   });
 

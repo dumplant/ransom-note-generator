@@ -2,6 +2,7 @@ import { StyleContext } from "@/contexts/styleContext";
 import { useContext } from "react";
 import SliderGroup from "./components/sliderGroup";
 import ColorSelect from "./components/colorSelect";
+import FontSelect from "./components/fontSelect";
 
 const EditorArea = () => {
   const ctx = useContext(StyleContext);
@@ -39,6 +40,7 @@ const EditorArea = () => {
         attr="translateY"
       />
       <ColorSelect />
+      <FontSelect />
     </>
   );
 };
