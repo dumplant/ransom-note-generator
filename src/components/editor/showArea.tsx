@@ -34,38 +34,36 @@ const ShowArea = () => {
           }
           const { bgColor, color } = getRandomColor(style.background.color);
           return (
-            <>
-              <div
-                key={index}
-                style={{
-                  fontFamily: getRandomFont(style.fontFamily),
-                  background: bgColor,
-                  color: color,
-                  translate: getRandomTranslateValue(
-                    style.translateX.value,
-                    style.translateY.value,
-                    style.translateX.randomness,
-                    style.translateY.randomness
-                  ),
-                  rotate: getRandomValue(
-                    style.rotate.value,
-                    style.rotate.randomness,
-                    "deg"
-                  ) as string,
-                  padding: getRandomValue(
-                    style.padding.value,
-                    style.padding.randomness
-                  ),
-                  margin: getRandomValue(
-                    style.margin.value,
-                    style.margin.randomness
-                  ),
-                }}
-                className="inline-block relative"
-              >
-                {char}
-              </div>
-            </>
+            <div
+              key={index}
+              style={{
+                fontFamily: getRandomFont(style.fontFamily),
+                background: bgColor,
+                color: color,
+                translate: getRandomTranslateValue(
+                  style.translateX.value,
+                  style.translateY.value,
+                  style.translateX.randomness,
+                  style.translateY.randomness
+                ),
+                rotate: getRandomValue(
+                  style.rotate.value,
+                  style.rotate.randomness,
+                  "deg"
+                ) as string,
+                padding: getRandomValue(
+                  style.padding.value,
+                  style.padding.randomness
+                ),
+                margin: getRandomValue(
+                  style.margin.value,
+                  style.margin.randomness
+                ),
+              }}
+              className="inline-block relative"
+            >
+              {char}
+            </div>
           );
         })}
       </LetterPaper>

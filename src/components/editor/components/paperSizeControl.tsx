@@ -7,10 +7,11 @@ const PaperSizeControl = () => {
   const { style, setStyle } = ctx!;
   return (
     <div className="mb-8">
-      <div className="mb-4">纸张大小</div>
-      <div className="flex gap-2 items-center">
+      <div className="mb-4 font-semibold">纸张大小 paper size</div>
+      <div className="flex gap-4 items-center mb-2">
         <span className="w-22">宽度 width</span>
         <Input
+          className="w-20"
           value={style.paperSize.width}
           onChange={(e) => {
             setStyle({
@@ -26,6 +27,7 @@ const PaperSizeControl = () => {
       <div className="flex gap-2 items-center">
         <span className="w-22">高度 height</span>
         <Input
+          className="w-20"
           value={style.paperSize.height}
           onChange={(e) => {
             setStyle({

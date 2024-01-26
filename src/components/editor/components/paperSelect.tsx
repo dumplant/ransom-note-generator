@@ -17,7 +17,7 @@ const PaperSelect = () => {
   const { style, setStyle } = ctx!;
   return (
     <div className="mb-8">
-      <div className="mb-4">信纸选择</div>
+      <div className="mb-4 font-semibold">信纸样式 paper style</div>
       <Select
         value={style.paper}
         onValueChange={(value: keyof typeof colorPalette) => {

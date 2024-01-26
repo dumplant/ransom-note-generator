@@ -15,7 +15,7 @@ const ColorSelect = () => {
   const { style, setStyle } = ctx!;
   return (
     <div className="mb-8">
-      <div className="mb-4">配色选择</div>
+      <div className="mb-4 font-semibold">配色 color</div>
       <Select
         value={style.background.color}
         onValueChange={(value: keyof typeof colorPalette) => {

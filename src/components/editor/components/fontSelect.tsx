@@ -17,7 +17,7 @@ const FontSelect = () => {
   return (
     <>
       <div className="mb-4">
-        <span>字体选择</span>
+        <span className="font-semibold">字体 font family</span>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="ml-4 h-6" variant="outline">

@@ -6,15 +6,17 @@ import FontSelect from "./components/fontSelect";
 import PaperSelect from "./components/paperSelect";
 import InputControl from "./components/inputControl";
 import PaperSizeControl from "./components/paperSizeControl";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const EditorArea = () => {
   const ctx = useContext(StyleContext);
   const { style, setStyle } = ctx!;
   return (
-    <>
+    <ScrollArea className="h-full p-1">
+      <PaperSelect />
+      <ColorSelect />
       <PaperSizeControl />
       <InputControl />
-      <PaperSelect />
       <SliderGroup
         title="内边距 padding"
         style={style}
@@ -45,9 +47,9 @@ const EditorArea = () => {
         setStyle={setStyle}
         attr="translateY"
       />
-      <ColorSelect />
+
       <FontSelect />
-    </>
+    </ScrollArea>
   );
 };
 

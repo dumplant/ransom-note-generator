@@ -16,20 +16,18 @@ const HeaderArea = () => {
       {text.map((char, index) => {
         const { bgColor, color } = getRandomColor("Wisdom");
         return (
-          <>
-            <div
-              key={index}
-              style={{
-                fontFamily: getRandomFont(fontFamily),
-                background: bgColor,
-                color: color,
-                margin: getRandomValue(5, 5),
-              }}
-              className="inline-block relative"
-            >
-              {char}
-            </div>
-          </>
+          <div
+            key={index}
+            style={{
+              fontFamily: getRandomFont(fontFamily),
+              background: bgColor,
+              color: color,
+              margin: getRandomValue(5, 5),
+            }}
+            className="inline-block relative"
+          >
+            {char}
+          </div>
         );
       })}
     </div>
