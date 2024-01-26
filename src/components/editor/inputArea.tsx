@@ -4,10 +4,11 @@ import { useContext } from "react";
 
 const InputArea = () => {
   const ctx = useContext(TextContext);
-  const { setText } = ctx!;
+  const { text, setText } = ctx!;
 
   return (
     <Textarea
+      value={text}
       className="h-full"
       onChange={(e) => {
         setText(e.target.value);
