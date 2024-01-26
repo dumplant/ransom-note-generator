@@ -15,7 +15,7 @@ const ShowArea = () => {
   const filteredTextArray = style.slashSeparator
     ? filteredText.split("/")
     : filteredText.split("");
-  console.log(filteredTextArray);
+
   return (
     <div
       className={

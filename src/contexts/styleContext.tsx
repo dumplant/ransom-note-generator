@@ -27,6 +27,10 @@ export interface Style {
   };
   fontFamily: { [key: string]: boolean };
   paper: string;
+  paperSize: {
+    width: number;
+    height: number;
+  };
   ignoreSpace: boolean;
   slashSeparator: boolean;
 }
@@ -73,6 +77,10 @@ const StyleProvider: React.FC<{
       FangSong: true,
     },
     paper: "white-paper",
+    paperSize: {
+      width: 600,
+      height: 400,
+    },
     ignoreSpace: true,
     slashSeparator: false,
   });

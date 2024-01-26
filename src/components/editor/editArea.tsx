@@ -5,12 +5,14 @@ import ColorSelect from "./components/colorSelect";
 import FontSelect from "./components/fontSelect";
 import PaperSelect from "./components/paperSelect";
 import InputControl from "./components/inputControl";
+import PaperSizeControl from "./components/PaperSizeControl";
 
 const EditorArea = () => {
   const ctx = useContext(StyleContext);
   const { style, setStyle } = ctx!;
   return (
     <>
+      <PaperSizeControl />
       <InputControl />
       <PaperSelect />
       <SliderGroup

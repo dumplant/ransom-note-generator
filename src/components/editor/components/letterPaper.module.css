@@ -7,9 +7,7 @@
   --yellow-paper: rgb(248, 234, 105);
   --white-paper: #f1f1f1;
 }
-.paper {
-  min-height: 80%;
-}
+
 .white-paper {
   background-color: var(--white-paper);
 }

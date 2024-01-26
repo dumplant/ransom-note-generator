@@ -7,7 +7,15 @@ const LetterPaper = ({ children }: { children: React.ReactNode[] }) => {
   const ctx = useContext(StyleContext);
   const { style } = ctx!;
   return (
-    <div className={cn(classes[style.paper], classes.paper)}>{children}</div>
+    <div
+      style={{
+        width: style.paperSize.width + "px",
+        height: style.paperSize.height + "px",
+      }}
+      className={cn(classes[style.paper], classes.paper)}
+    >
+      {children}
+    </div>
   );
 };
 
