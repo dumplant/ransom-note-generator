@@ -1,6 +1,6 @@
 # ransom-style note generator
 
-- site: ransom-note-generator.vercel.app
+- site: https://ransom-note-generator.vercel.app/
 
 ## showcase
 
