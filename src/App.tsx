@@ -8,10 +8,10 @@ import HeaderArea from "./components/editor/headerArea";
 function App() {
   return (
     <div>
-      <div className="w-full h-14 bg-gray-900">
+      <div className="w-full bg-gray-900">
         <HeaderArea />
       </div>
-      <div className="h-[calc(100vh-3.5rem)] flex gap-4 p-4">
+      <div className="h-[calc(100vh-3.5rem)] flex flex-col lg:flex-row gap-4 p-4">
         <TextProvider>
           <StyleProvider>
             <div className="flex-1">

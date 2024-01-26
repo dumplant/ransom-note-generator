@@ -14,11 +14,14 @@ const PaperSizeControl = () => {
           className="w-20"
           value={style.paperSize.width}
           onChange={(e) => {
+            const number = Number.isNaN(Number(e.target.value))
+              ? 18
+              : Number(e.target.value);
             setStyle({
               ...style,
               paperSize: {
                 ...style.paperSize,
-                width: Number(e.target.value),
+                width: number,
               },
             });
           }}
@@ -30,11 +33,14 @@ const PaperSizeControl = () => {
           className="w-20"
           value={style.paperSize.height}
           onChange={(e) => {
+            const number = Number.isNaN(Number(e.target.value))
+              ? 30
+              : Number(e.target.value);
             setStyle({
               ...style,
               paperSize: {
                 ...style.paperSize,
-                height: Number(e.target.value),
+                height: number,
               },
             });
           }}

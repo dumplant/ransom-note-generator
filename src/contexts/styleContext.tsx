@@ -78,8 +78,8 @@ const StyleProvider: React.FC<{
     },
     paper: "white-paper",
     paperSize: {
-      width: 600,
-      height: 400,
+      width: 18,
+      height: 30,
     },
     ignoreSpace: true,
     slashSeparator: false,

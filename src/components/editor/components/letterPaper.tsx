@@ -9,8 +9,8 @@ const LetterPaper = ({ children }: { children: React.ReactNode[] }) => {
   return (
     <div
       style={{
-        width: style.paperSize.width + "px",
-        height: style.paperSize.height + "px",
+        width: style.paperSize.width + "rem",
+        height: style.paperSize.height + "rem",
       }}
       className={cn(classes[style.paper], classes.paper)}
     >
