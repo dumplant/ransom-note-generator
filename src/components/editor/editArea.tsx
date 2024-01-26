@@ -3,12 +3,14 @@ import { useContext } from "react";
 import SliderGroup from "./components/sliderGroup";
 import ColorSelect from "./components/colorSelect";
 import FontSelect from "./components/fontSelect";
+import PaperSelect from "./components/paperSelect";
 
 const EditorArea = () => {
   const ctx = useContext(StyleContext);
   const { style, setStyle } = ctx!;
   return (
     <>
+      <PaperSelect />
       <SliderGroup
         title="内边距 padding"
         style={style}

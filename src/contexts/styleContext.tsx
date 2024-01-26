@@ -26,6 +26,7 @@ export interface Style {
     color: keyof typeof colorPalette;
   };
   fontFamily: { [key: string]: boolean };
+  paper: string;
 }
 
 export const StyleContext = createContext<{
@@ -69,6 +70,7 @@ const StyleProvider: React.FC<{
       NSimSun: true,
       FangSong: true,
     },
+    paper: "white-paper",
   });
 
   return (

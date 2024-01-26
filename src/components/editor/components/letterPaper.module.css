@@ -1,0 +1,99 @@
+:root {
+  --paper-line: #94acd4;
+  --paper-background: #f1ede9;
+  --tape-gray: #dbd8be;
+  --tape-edge-gray: #b7b49d;
+  --transparent: rgba(255, 255, 255, 0);
+  --yellow-paper: rgb(248, 234, 105);
+  --white-paper: #f1f1f1;
+}
+.paper {
+  min-height: 80%;
+}
+.white-paper {
+  background-color: var(--white-paper);
+}
+.white-paper-sm {
+  background-color: var(--white-paper);
+}
+
+.yellow-paper {
+  background-color: var(--yellow-paper);
+}
+.yellow-paper-sm {
+  background-color: var(--yellow-paper);
+}
+
+.white-stripe {
+  background: repeating-linear-gradient(
+    var(--paper-background),
+    var(--paper-background) 31px,
+    var(--paper-line) 31px,
+    var(--paper-line) 32px
+  );
+}
+
+.white-stripe-sm {
+  background: repeating-linear-gradient(
+    var(--paper-background),
+    var(--paper-background) 5px,
+    var(--paper-line) 5px,
+    var(--paper-line) 6px
+  );
+}
+
+.yellow-stripe {
+  position: relative;
+  background-color: var(--yellow-paper);
+  background-image: repeating-linear-gradient(
+    transparent 0,
+    transparent 1em,
+    skyblue 0,
+    skyblue 1.1em
+  );
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    height: 100%;
+    width: 0.1rem;
+    border-color: rgba(220, 0, 0, 0.5);
+    border-style: solid;
+    border-width: 0 0.1rem 0 0.1rem;
+  }
+}
+
+.yellow-stripe-sm {
+  position: relative;
+  background-color: var(--yellow-paper);
+  background-image: repeating-linear-gradient(
+    transparent 0,
+    transparent 1px,
+    skyblue 0,
+    skyblue 1.1px
+  );
+  &::before {
+    content: "";
+    position: absolute;
+    left: 10%;
+    top: 0;
+    height: 100%;
+    width: 0.01rem;
+    border-color: rgba(220, 0, 0, 0.5);
+    border-style: solid;
+    border-width: 0 0.01rem 0 0.01rem;
+  }
+}
+
+.tape {
+  position: absolute;
+  height: 1rem;
+  top: 10%;
+  left: -10%;
+  width: 130%;
+  background-color: var(--tape-gray);
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+  opacity: 0.5;
+}

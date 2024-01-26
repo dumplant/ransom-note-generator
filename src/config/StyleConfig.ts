@@ -9,6 +9,13 @@ export const colorPalette = {
   Projections: ["#FDA176", "#FD4A1F", "#FEE9B0", "#F4B04D", "#58B185"],
 };
 
+export const paperConfig = [
+  "white-paper",
+  "yellow-paper",
+  "white-stripe",
+  "yellow-stripe",
+];
+
 export const fontFamily = [
   "SimSun",
   "SimHei",
